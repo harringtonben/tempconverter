@@ -1,8 +1,32 @@
 body {
-	background-color: lightgrey;
+	background-color: #B8C6C6;
+	font-family: 'Anton', sans-serif;
 }
 
 #container {
 	margin:auto;
-	max-width: 100%;
+	max-width: 90%;
+	text-align: center;
+	background-color: #FDFDFF;
+	border-radius: 5px;
+	padding: 10px;
+	color: #546A7B;
+
 }
+
+#form {
+	margin: auto;
+}
+
+.hot-shit {
+	color: red;
+}
+
+.cold-shit {
+	color: blue;
+}
+
+.normal-shit {
+	color: #62929E;
+}
+
