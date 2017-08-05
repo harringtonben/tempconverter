@@ -1,3 +1,8 @@
 body {
-	background-color: red;
+	background-color: lightgrey;
+}
+
+#container {
+	margin:auto;
+	max-width: 100%;
 }
