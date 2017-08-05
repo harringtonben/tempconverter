@@ -2,17 +2,23 @@
 <html>
 <head>
 	<title>Temp Converter</title>
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./main.css">
 </head>
 <body>
 <div id="container">
-
-	<div class="form">
-		<p>Please type in the temperature you would like to convert: <input type="text" name="temptoconvert"></p>
-		<input class="inline" type="radio" name="fahrenheit"> Convert to fahrenheit <br>
-		<input class="inline" type="radio" name="celsius"> Convert to celsius <br>
-		<button type="button" name="clear">Clear form</button>
-		<button type="button" name="submit">Convert Temp</button>
+<h1 class="damnbig">Hey I heard you were too stupid to do basic math, so use the tool below to conver your temp!</h1>
+<br>
+	<form id="form">
+		<p>Please type in the temperature you would like to convert: <input id="convertme" type="text" name="temptoconvert"></p>
+		<input id="fahrenheit" class="inline" type="radio" name="convert"> Convert to fahrenheit <br>
+		<input id="celsius" class="inline" type="radio" name="convert"> Convert to celsius <br>
+		<button id="clear" input="clear" name="clear">Clear form</button>
+		<button id="submit" type="button" name="submit">Convert Temp</button>
+	</form>
+<br>
+<br>
+	<div id="theansweris">		
 	</div>
 
 </div>
