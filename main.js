@@ -1,8 +1,14 @@
 console.log("I'm in main JS");
 
 var dataToConvert = document.getElementById("submit").addEventListener("click", convertDatTemp);
+var enterToConvert = document.getElementById("submit").addEventListener("keypress", iPressedEnter);
 var answerContainer = document.getElementById("theansweris");
 
+function iPressedEnter (keypress) {
+	if (13 == keypress.keyCode) {
+		convertDatTemp();
+	}
+}
 
 function convertDatTemp (clickEvent) {
 
@@ -12,23 +18,27 @@ function convertDatTemp (clickEvent) {
 	//this if else statement runs the temperature converter function based on the box checked in form
 	if (fahrenheitChecked) {
 		var convertedFValue = makeMeFahrenheit();
-	} else if (celsiusChecked) {
-		var convertedCValue = makeMeCelsius();
-	}
-
-	//this if else statement runs the function that determines the class of the return text
-	if (fahrenheitChecked) {
-		var classColor = textColor(convertedFValue, 'fahrenheit')
-	} else if (celsiusChecked) {
-		var classColor = textColor(convertedCValue, 'celsius')
-	}
-
-	//this if else statment is what will return the printed value to the DOM
-	if (fahrenheitChecked) {  
+		var classColor = textColor(convertedFValue, 'fahrenheit');
 		printToDom(convertedFValue, classColor, 'fahrenheit');
 	} else if (celsiusChecked) {
+		var convertedCValue = makeMeCelsius();
+		var classColor = textColor(convertedCValue, 'celsius');
 		printToDom(convertedCValue, classColor, 'celsius');
 	}
+
+	// //this if else statement runs the function that determines the class of the return text
+	// if (fahrenheitChecked) {
+	// 	var classColor = textColor(convertedFValue, 'fahrenheit')
+	// } else if (celsiusChecked) {
+	// 	var classColor = textColor(convertedCValue, 'celsius')
+	// }
+
+	// //this if else statment is what will return the printed value to the DOM
+	// if (fahrenheitChecked) {  
+	// 	printToDom(convertedFValue, classColor, 'fahrenheit');
+	// } else if (celsiusChecked) {
+	// 	printToDom(convertedCValue, classColor, 'celsius');
+	// }
 }
 
 function makeMeCelsius(temp) {
