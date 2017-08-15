@@ -1,8 +1,22 @@
 console.log("I'm in main JS");
 
 var dataToConvert = document.getElementById("submit").addEventListener("click", convertDatTemp);
+var enterToConvert = document.getElementById("convertme");
 var answerContainer = document.getElementById("theansweris");
+var clearButton = document.getElementById("clear");
+document.body.addEventListener("keypress", function(event) {
+	// console.log(event);
+	if (event.key === 'Enter') {
+		// console.log('I hit enter');
+		convertDatTemp(event);
 
+	}
+})
+
+	// function iPressedEnter (keypress) {
+	// 	// console.log(keypress);
+
+	// }
 
 function convertDatTemp (clickEvent) {
 
@@ -12,23 +26,14 @@ function convertDatTemp (clickEvent) {
 	//this if else statement runs the temperature converter function based on the box checked in form
 	if (fahrenheitChecked) {
 		var convertedFValue = makeMeFahrenheit();
-	} else if (celsiusChecked) {
-		var convertedCValue = makeMeCelsius();
-	}
-
-	//this if else statement runs the function that determines the class of the return text
-	if (fahrenheitChecked) {
-		var classColor = textColor(convertedFValue, 'fahrenheit')
-	} else if (celsiusChecked) {
-		var classColor = textColor(convertedCValue, 'celsius')
-	}
-
-	//this if else statment is what will return the printed value to the DOM
-	if (fahrenheitChecked) {  
+		var classColor = textColor(convertedFValue, 'fahrenheit');
 		printToDom(convertedFValue, classColor, 'fahrenheit');
 	} else if (celsiusChecked) {
+		var convertedCValue = makeMeCelsius();
+		var classColor = textColor(convertedCValue, 'celsius');
 		printToDom(convertedCValue, classColor, 'celsius');
 	}
+
 }
 
 function makeMeCelsius(temp) {
@@ -58,3 +63,18 @@ function printToDom (datgoodtemp, textcolor, typeoftemp) {
 	domString += '<h1 class="' + textcolor + '">Hey idiot, I did the math for you and your converted temp is ' + datgoodtemp + "° " + typeoftemp + '</h1>'
 	answerContainer.innerHTML = domString;
 }
+
+clearButton.addEventListener('click', function(event) {
+  var clearThis = document.getElementById('convertme').value = '';
+})
+
+
+
+
+
+
+
+
+
+
+
